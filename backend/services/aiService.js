@@ -2,9 +2,9 @@ const axios = require("axios");
 
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
 const MODELS = [
-  "minimax/minimax-m2.5:free",
-  "mistralai/mistral-7b-instruct:free",
-  "mistralai/mistral-7b-instruct",
+  "google/gemini-2.0-flash-lite-preview-02-05:free",
+  "mistralai/mistral-small-24b-instruct-2501:free",
+  "meta-llama/llama-3.3-70b-instruct:free",
 ];
 
 function extractContent(responseData) {
