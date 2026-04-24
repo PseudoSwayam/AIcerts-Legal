@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Legal AI Design System — Clean, professional, white-themed
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 22% 11%;
+
+    --card: 220 20% 98%;
+    --card-foreground: 222 22% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 22% 11%;
+
+    --primary: 222 28% 14%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 22% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 214 100% 97%;
+    --accent-foreground: 222 47% 30%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 222 28% 14%;
+
+    --radius: 0.625rem;
+
+    /* Risk semantic tokens */
+    --risk-low: 142 71% 45%;
+    --risk-low-bg: 142 76% 96%;
+    --risk-medium: 38 92% 50%;
+    --risk-medium-bg: 48 100% 96%;
+    --risk-high: 0 72% 51%;
+    --risk-high-bg: 0 86% 97%;
+
+    /* Subtle accent blue for legal-tech feel */
+    --brand: 217 91% 60%;
+    --brand-soft: 214 100% 97%;
+
+    /* Surfaces */
+    --surface: 0 0% 100%;
+    --surface-muted: 220 20% 98%;
+    --surface-elevated: 0 0% 100%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 22% 11% / 0.04);
+    --shadow-card: 0 1px 3px 0 hsl(222 22% 11% / 0.05), 0 1px 2px -1px hsl(222 22% 11% / 0.04);
+    --shadow-elevated: 0 4px 12px -2px hsl(222 22% 11% / 0.08), 0 2px 4px -2px hsl(222 22% 11% / 0.04);
+
+    /* Sidebar */
+    --sidebar-background: 220 20% 98%;
+    --sidebar-foreground: 220 9% 35%;
+    --sidebar-primary: 222 28% 14%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 100% 97%;
+    --sidebar-accent-foreground: 222 47% 30%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body, #root {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+}
+
+@layer components {
+  /* MS Word-like editor surface */
+  .doc-editor {
+    @apply bg-white mx-auto rounded-md border border-border shadow-[var(--shadow-card)];
+    max-width: 820px;
+    padding: 64px 80px;
+    line-height: 1.75;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: hsl(var(--foreground));
+  }
+  .doc-editor h1 {
+    @apply text-2xl font-semibold mb-6 mt-2;
+  }
+  .doc-editor h2 {
+    @apply text-lg font-semibold mt-8 mb-3 uppercase tracking-wide;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.875rem;
+    color: hsl(var(--foreground));
+  }
+  .doc-editor p {
+    @apply mb-4 text-[15px];
+  }
+  .doc-editor ol, .doc-editor ul {
+    @apply mb-4 pl-6 text-[15px];
+  }
+  .doc-editor ol li { @apply list-decimal mb-2; }
+  .doc-editor ul li { @apply list-disc mb-2; }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+}
